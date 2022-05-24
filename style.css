@@ -78,6 +78,11 @@ ul {
   font-size: 2rem;
 }
 
+.introduction-cover img{
+  object-fit: cover;
+  height: 100%;
+}
+
 h1::before {
   content: "";
   display: block;
@@ -115,7 +120,7 @@ button:hover {
   background-image: url(img/onda.svg);
 }
 
-.content-advantages {                                                               
+.list-content-advantages {                                                               
   background: #fff;
   padding: 2.5rem ;
   max-width: 100%;
@@ -147,4 +152,53 @@ footer {
   text-align: center;
   padding: 2.5rem;
   box-sizing: border-box;
+}
+
+@media (max-width: 1000px) {
+  .content-advantages {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .title-advantages {
+    text-align: center;
+  }
+}
+
+@media (max-width: 635px) {
+  body {
+    gap: 10px;
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .header img {
+    margin: 40px 0;
+  }
+
+    .menu {
+      gap: 20px;
+    }
+
+    .menu li a {
+      padding: 0.5rem 1rem;
+    }
+
+  h1::before {
+    display: none;
+  }
+
+  .introduction {
+    justify-items: start;
+    text-align: left;
+  }
+
+  .title-advantages {
+    font-size: 2rem;
+  }
+
+
 }
