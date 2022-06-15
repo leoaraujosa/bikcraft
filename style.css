@@ -1,10 +1,31 @@
+:root {
+  --cor-primaria: #e21;
+  --cor-primaria-escura: #900;
+  --fundo-1: #f7f7f7;
+  --fundo-2: #ffffff;
+  --texto: #000000;
+  --cor-subtitulo: rgba(0, 0, 0, 0.2);
+  --onda: url(img/onda-clara.svg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo-1: #111111;
+    --fundo-2: #000000;
+    --texto: #ffffff;
+    --cor-subtitulo: rgba(255, 255, 255, 0.2);
+    --onda: url(img/onda-escura.svg);
+  }
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-  background: #f7f7f7;
+  background: var(--fundo-1);
   display: grid;
   justify-items: center;
   gap: 60px;
+  padding-top: 60px;
 }
 
 h1, h2, h3 {
@@ -32,35 +53,33 @@ ul {
   justify-items: center;
 }
 
-.header img {
-  margin: 60px 0px;
-}
-
 .menu {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 60px;
 }
 
 .menu a {
   display: block;
-  color: #000000;
+  color: var(--texto);
   padding: 1rem 2rem;
   border-radius: 5px;
-  background: white;
+  background: var(--fundo-2);
   font-weight: bold;
-  border: 2px solid #fff;
+  border: 2px solid var(--fundo-2);
 }
 
 .menu a:hover {
-  border: 2px solid #e21;
+  border: 2px solid var(--cor-primaria);
 }
 
 .content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   max-width: 62.5rem;  
+  color: var(--texto);
 }
 
 .introduction {
@@ -70,7 +89,7 @@ ul {
   text-align: right;
   padding: 2.5rem;
   gap: 20px;
-  background: #fff;
+  background: var(--fundo-2);
   position: relative;
 }
 
@@ -88,15 +107,15 @@ h1::before {
   display: block;
   width: 3.75rem;
   height: 0.25rem;
-  background: #e21;
+  background: var(--cor-primaria);
   position: absolute;
   top: 2rem;
   right: -2rem;
 }
 
 button {
-  background: #e21;
-  color: #fff;
+  background: var(--cor-primaria);
+  color: #ffffff;
   padding: 1rem 2rem;
   border: 0;
   border-radius: 0.25rem;
@@ -104,7 +123,7 @@ button {
 }
 
 button:hover {
-  background-color: #900;
+  background-color: var(--cor-primaria-escura);
 }
 
 .intro-bikcraft {
@@ -113,21 +132,21 @@ button:hover {
 
 .title-advantages {
   font-size: 4rem;
-  color: rgba(0, 0, 0, 0.2);
+  color: var(--cor-subtitulo);
   text-align: right;
   align-self: center;
   padding: 2.5rem;
-  background-image: url(img/onda.svg);
+  background-image: var(--onda);
 }
 
 .list-content-advantages {                                                               
-  background: #fff;
+  background: var(--fundo-2);
   padding: 2.5rem ;
   max-width: 100%;
 }
 
 .item-advantages:nth-child(odd) {
-  background-color: #f7f7f7;
+  background-color: var(--fundo1);
 }
 
 .item-advantages {
@@ -135,7 +154,7 @@ button:hover {
   gap: 10px 20px;
   display: grid;
   grid-template-columns: auto 1fr;
-  border-left: 3px solid #fff;
+  border-left: 3px solid var(--fundo-2);
 }
 
 .item-advantages p {
@@ -143,12 +162,13 @@ button:hover {
 }
 
 .item-advantages:hover {
-  border-left: 3px solid #e21;
+  border-left: 3px solid var(--cor-primaria);
 }
 
 footer {
   width: 100%;
-  background: #fff;
+  background: var(--fundo-2);
+  color: var(--texto);
   text-align: center;
   padding: 2.5rem;
   box-sizing: border-box;
